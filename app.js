@@ -18,10 +18,7 @@ const app = express();
 let port = 8080;
 const DB_url = process.env.MONGODB_URL;
 
-app.use(cors({
-    origin: 'https://ecomf-gray.vercel.app/',  // Replace with your Vercel frontend URL
-    credentials: true,
-}));
+app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());
