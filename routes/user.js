@@ -145,7 +145,8 @@ console.log(req.body);
     const options = {
         httpOnly: true,
         secure: true,
-        sameSite: 'None'
+        sameSite: 'None',
+        maxAge: 24 * 60 * 60 * 1000 // 1 day
     }
 
     return res
