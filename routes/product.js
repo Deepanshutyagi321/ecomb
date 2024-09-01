@@ -45,7 +45,7 @@ router.route("/").post(verifyJWT, wrapAsync(async (req, res) => {
 
 
 // show route
-router.route("/:id").get( wrapAsync(async (req, res) => {
+router.route("/:id").get(wrapAsync(async (req, res) => {
     // console.log(req.params.id);
     const product = await Product.findById(req.params.id).populate("category")
     res.json({ product });
