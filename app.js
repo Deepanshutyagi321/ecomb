@@ -18,7 +18,7 @@ const app = express();
 let port = 8080;
 const DB_url = process.env.MONGODB_URL;
 
-const cors = require('cors');
+
 
 app.use(cors({
     origin: 'http://localhost:5173/',
