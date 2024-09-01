@@ -20,7 +20,7 @@ router.route("/").get(wrapAsync(async (req, res) => {
 
 //product add route
 router.route("/").post(verifyJWT, wrapAsync(async (req, res) => {
-    // console.log(req.body.formData.image);
+    // console.log(req);
     // console.log(req.body.formData.category);
     let user = req.user._id;
     // console.log(user);
