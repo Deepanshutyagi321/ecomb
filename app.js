@@ -21,7 +21,7 @@ const DB_url = process.env.MONGODB_URL;
 
 
 app.use(cors({
-    origin: 'http://localhost:5173/',
+    origin: 'https://ecomf-one.vercel.app/',
     credentials: true
 }));
 app.use(express.urlencoded({ extended: true }));
