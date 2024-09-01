@@ -9,7 +9,7 @@ export const verifyJWT  = wrapAsync( async (req, res, next) => {
     let token = req.cookies?.accessToken || req.header("Authorization")?.replace("Bearer", "");
     
     if (!token) {
-        throw new expressError(401, " Unauthorized request")
+        throw new expressError(401, "Not have accessToken")
     }
     let decodeToken = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET);
     

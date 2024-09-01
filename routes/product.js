@@ -45,14 +45,14 @@ router.route("/").post(verifyJWT, wrapAsync(async (req, res) => {
 
 
 //edit show route
-router.route("/:id").get(wrapAsync(async (req, res) => {
+router.route("/:id").get(verifyJWT, wrapAsync(async (req, res) => {
     // console.log(req.params.id);
     const product = await Product.findById(req.params.id).populate("category")
     res.json({ product });
 }));
 
 //delete route
-router.route("/:id").delete(wrapAsync(async (req, res) => {
+router.route("/:id").delete(verifyJWT, wrapAsync(async (req, res) => {
     console.log(req.params.id);
     let deleteProduct = await Product.findByIdAndDelete(req.params.id)
     res.send({ deleteProduct });

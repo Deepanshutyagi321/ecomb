@@ -185,7 +185,8 @@ router.route("/logout").post( verifyJWT, wrapAsync(async (req, res) => {
 
     const options = {
         httpOnly: true,
-        secure: true
+        secure: true,
+        sameSite: 'None',
     };
 
     // Clear cookies
