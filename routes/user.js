@@ -144,7 +144,8 @@ console.log(req.body);
 
     const options = {
         httpOnly: true,
-        secure: true
+        secure: true,
+        sameSite: 'None'
     }
 
     return res
